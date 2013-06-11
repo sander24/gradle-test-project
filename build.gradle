@@ -1,2 +1,19 @@
 apply plugin: 'eclipse'
 apply plugin: 'java'
+
+version = 0.1
+//mainClassName = "com.zeroturnaround.gradle.Main"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+   compile "commons-collections:commons-collections:3.2"
+   testCompile "junit:junit:4.8.2"
+}
+
+//sourceSets {
+//    
+//    
+//}
