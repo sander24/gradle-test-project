@@ -1,8 +1,6 @@
 task makeDirs() {
   println "making directories .."
-  targetDir = new File('target')
-  targetDir.mkdirs()
-    
+  new File('target').mkdirs()
 }
 
 task copyFiles(type: Copy, dependsOn: makeDirs) {
