@@ -1,0 +1,13 @@
+task makeDirs() {
+  println "making directories .."
+  targetDir = new File('target')
+  targetDir.mkdirs()
+    
+}
+
+task copyFiles(type: Copy, dependsOn: makeDirs) {
+  from 'resources'
+  into 'target'
+  include '**/*.xml', '**/*.txt', '**/*.properties'
+}
+  
