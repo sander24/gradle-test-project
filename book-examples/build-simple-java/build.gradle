@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+version = 0.1
+
+repositories {
+  mavenCentral()
+}
+
+sourceSets {
+    main {
+      java {
+        // currently a no-op
+        exclude 'com/zeroturnaround/gradle/unwanted/**'
+      }
+    }
+}
+
+
+// execute "gradle clean build"
