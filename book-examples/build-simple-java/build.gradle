@@ -9,7 +9,7 @@ repositories {
 sourceSets {
     main {
       java {
-        // currently a no-op
+        // filter out some classes
         exclude 'com/zeroturnaround/gradle/unwanted/**'
       }
     }
