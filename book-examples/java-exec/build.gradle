@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  runtime 'commons-codec:commons-codec:1.5'
+}
+
+task encode(type: JavaExec, dependsOn: classes) {
+  main = 'org.gradle.example.commandline.MetaphoneEncoder'
+  args = "The rain in Spain falls mainly in the plain".split().toList()
+  
+//  println "type is : " + sourceSets.main.getClass() 
+//  println "type is : " + sourceSets.main.inspect()
+//  
+
+//    classpath sourceSets.main.classesDir
+  classpath configurations.runtime
+}

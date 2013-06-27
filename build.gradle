@@ -7,6 +7,24 @@ repositories {
   mavenCentral()
 }
 
+sourceSets {
+//    // Note that just declaring this sourceset creates two configurations.
+//    intTest {
+//        java {
+//            compileClasspath += main.output
+//            runtimeClasspath += main.output
+//        }
+//    }
+    
+    main {
+      java {
+        // currently a no-op
+        exclude 'some/unwanted/package/**'
+      }
+    }
+      
+}
+
 dependencies {
   compile "commons-collections:commons-collections:3.2"
   testCompile "junit:junit:4.8.2"
@@ -19,8 +37,3 @@ jar {
 }
 
 
-
-//sourceSets {
-//    
-//    
-//}
