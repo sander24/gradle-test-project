@@ -10,11 +10,11 @@ dependencies {
 }
 
 sourceSets {
-    main {
-      java {
-        // no customizations at the moment..
-      }
+  main {
+    java {
+      // no customizations at the moment..
     }
+  }
 }
 
 /**
