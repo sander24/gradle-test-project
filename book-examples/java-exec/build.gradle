@@ -8,14 +8,24 @@ dependencies {
   runtime 'commons-codec:commons-codec:1.5'
 }
 
-task encode(type: JavaExec, dependsOn: classes) {
-  main = 'org.gradle.example.commandline.MetaphoneEncoder'
-  args = "The rain in Spain falls mainly in the plain".split().toList()
-  
-//  println "type is : " + sourceSets.main.getClass() 
-//  println "type is : " + sourceSets.main.inspect()
-//  
-
-//    classpath sourceSets.main.classesDir
-  classpath configurations.runtime
+sourceSets {
+    main {
+      java {
+        // currently a no-op
+        exclude 'com/zeroturnaround/gradle/unwanted/**'
+      }
+    }
 }
+
+/**
+ * Executes the main class via gradle
+ */
+//task encode(type: JavaExec, dependsOn: classes) {
+task runSimple(type: JavaExec, dependsOn: classes) {
+  main = 'com.zeroturnaround.gradle.Main'
+  args = "John".split().toList()
+  
+  classpath = sourceSets.main.runtimeClasspath
+}
+
+// run: "gradle clean runSimple"
