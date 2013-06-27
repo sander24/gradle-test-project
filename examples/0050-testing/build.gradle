@@ -29,4 +29,4 @@ task runSimple(type: JavaExec, dependsOn: classes) {
   classpath = sourceSets.main.runtimeClasspath
 }
 
-// run: "gradle clean runSimple"
+// run: "gradle clean test"
