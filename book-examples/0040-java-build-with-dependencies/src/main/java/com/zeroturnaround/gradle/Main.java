@@ -1,9 +1,14 @@
 package com.zeroturnaround.gradle;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.zeroturnaround.gradle.Greet;
 
 public class Main {
 
+  private static final Logger log = LoggerFactory.getLogger(Main.class);
+  
   public static void main(String[] args) {
     
     // try to get the name from the arguments
@@ -14,8 +19,8 @@ public class Main {
     
     Greet greet = new Greet(name);
     
-    System.out.println(greet.greet());
-    System.out.println("The greet object : " + greet);
+    log.info(greet.greet());
+    log.info("The greet object : " + greet);
   }
 
 }
