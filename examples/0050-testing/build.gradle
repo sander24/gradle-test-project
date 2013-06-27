@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'commons-lang:commons-lang:2.6'
+  
+  testCompile 'junit:junit:4.8.2'
+}
+
+sourceSets {
+  main {
+    java {
+      // no customizations at the moment..
+    }
+  }
+}
+
+/**
+ * Executes the main class via gradle
+ */
+task runSimple(type: JavaExec, dependsOn: classes) {
+  main = 'com.zeroturnaround.gradle.Main'
+  args = "John".split().toList()
+  
+  classpath = sourceSets.main.runtimeClasspath
+}
+
+// run: "gradle clean runSimple"

@@ -1,16 +1,16 @@
 package com.zeroturnaround.gradle;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class GreetTest {
 
   @Test
   public void testGreet() {
-    Greet greet = new Greet();
+    Greet greet = new Greet("Joe");
+    String greetMessage = greet.greet();
     
-     System.out.println("Test if pricePerMonth returns Euro...") ;
-     Subscription S = new Subscription(200,2) ;
-     assertTrue(S.pricePerMonth() == 1.0) ;
+    System.out.println("uuuu-haa uuuu-haaa im the junit test") ;
+    Assert.assertEquals(greetMessage, "Hello, Joe!");
   }
 }
