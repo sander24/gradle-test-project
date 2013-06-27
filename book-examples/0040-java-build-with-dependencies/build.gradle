@@ -6,7 +6,7 @@ repositories {
 }
 
 dependencies {
-  runtime 'commons-lang:commons-lang:2.6'
+  compile 'commons-lang:commons-lang:2.6'
 }
 
 sourceSets {

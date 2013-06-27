@@ -14,8 +14,8 @@ public class Main {
     
     Greet greet = new Greet(name);
     
-    //log.debug(greet.greet());
     System.out.println(greet.greet());
+    System.out.println("The greet object : " + greet);
   }
 
 }
