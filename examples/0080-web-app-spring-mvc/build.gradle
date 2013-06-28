@@ -5,20 +5,20 @@ repositories {
   mavenCentral()
 }
 
-dependencies {
-  compile 'org.springframework:spring-webmvc:3.1.0.RELEASE'
-  
-  // TODO -- how to exclude them from the final jar??
-  compile 'javax.servlet:jstl:1.2'
-  compile 'javax.servlet:servlet-api:2.5'
+configurations {
+  provided
 }
 
 sourceSets {
-  main {
-    java {
-      // nothing ..
-    }
-  }
+  main.compileClasspath += configurations.provided
+}
+
+dependencies {
+  compile 'org.springframework:spring-webmvc:3.1.0.RELEASE'
+  
+  // a separate "provided" configuration to include these dependencies only at compile-time and exclude from final jar 
+  provided 'javax.servlet:jstl:1.2'
+  provided 'javax.servlet:servlet-api:2.5'
 }
 
 war {
