@@ -1,0 +1,24 @@
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  // nothing ..  
+}
+
+sourceSets {
+  main {
+    java {
+      // nothing ..
+    }
+  }
+}
+
+war {
+  archiveName = "demoapp-static-html.war"
+}
+
+// run: "gradle clean build"
