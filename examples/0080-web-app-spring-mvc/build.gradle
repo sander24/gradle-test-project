@@ -6,7 +6,11 @@ repositories {
 }
 
 dependencies {
-  // nothing ..  
+  compile 'org.springframework:spring-webmvc:3.1.0.RELEASE'
+  
+  // TODO -- how to exclude them from the final jar??
+  compile 'javax.servlet:jstl:1.2'
+  compile 'javax.servlet:servlet-api:2.5'
 }
 
 sourceSets {
