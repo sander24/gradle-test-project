@@ -22,7 +22,7 @@ dependencies {
 }
 
 war {
-  archiveName = "demoapp-static-html.war"
+  archiveName = "demoapp-spring-mvc.war"
 }
 
 // run: "gradle clean build"
